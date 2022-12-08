@@ -31,10 +31,12 @@ const recipeSchema = new mongoose.Schema({
 
 const Recipe = mongoose.model("Recipe", recipeSchema);
 
-app.get("/recipes", function (req, res) {
-  Recipe.find(function (err, foundRecipe) {
-    res.send(foundRecipe);
-  });
+app.get("/recipes", async function (req, res) {
+  Recipe.find(
+    await function (err, foundRecipe) {
+      res.send(foundRecipe);
+    }
+  );
 });
 
 app.post("/recipes", function (req, res) {
