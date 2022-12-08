@@ -5,7 +5,9 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const path = require("path");
 
-mongoose.connect(process.env.URL);
+mongoose.connect(
+  "mongodb+srv://vamsi053:Mvamsi053@cluster0.5ygqz.mongodb.net/recipesDB"
+);
 
 const app = express();
 // var distDir = __dirname + "/dist/";
