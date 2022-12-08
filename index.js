@@ -1,13 +1,11 @@
 const express = require("express");
 const cors = require("cors");
-require("dotenv").config();
+require("dotenv").config({ path: __dirname + "/.env" });
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const path = require("path");
 
-mongoose.connect(
-  "mongodb+srv://vamsi053:Mvamsi053@cluster0.5ygqz.mongodb.net/recipesDB"
-);
+mongoose.connect(process.env.URL);
 
 const app = express();
 // var distDir = __dirname + "/dist/";
@@ -112,4 +110,3 @@ app
 app.listen(process.env.PORT || 3001, function () {
   console.log("server running on port 3001");
 });
-module.exports = app;
