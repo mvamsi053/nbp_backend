@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const path = require("path");
 
-mongoose.connect(process.env.URL);
+mongoose.connect(process.env.URL, { useNewUrlParser: true });
 
 const app = express();
 // var distDir = __dirname + "/dist/";
