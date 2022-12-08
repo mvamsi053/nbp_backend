@@ -110,3 +110,4 @@ app
 app.listen(process.env.PORT || 3001, function () {
   console.log("server running on port 3001");
 });
+module.exports = app;
